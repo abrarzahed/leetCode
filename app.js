@@ -102,3 +102,36 @@ const isValid = function (s) {
 
 console.log(isValid("()(]{}"));
 */
+
+/****************************************** 
+COMMENT:    26. Remove Duplicates from Sorted Array
+Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
+Return k.
+******************************************/
+// const removeDuplicates = function (nums) {
+//   const results = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!results.includes(nums[i])) {
+//       results.push(nums[i]);
+//     }
+//   }
+//   results.sort((a, b) => a - b);
+//   return results.sort((a, b) => a - b).length;
+// };
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+/*
+var removeDuplicates = function (nums) {
+  let i = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[i] !== nums[j]) {
+      i++;
+      console.log(nums[i], nums[j]);
+      nums[i] = nums[j];
+    }
+  }
+  return i + 1;
+};
+console.log(removeDuplicates([1, 1, 2]));
+*/
